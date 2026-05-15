@@ -27,6 +27,8 @@ module "ci" {
   subnet_id = module.public_subnets.subnet_ids[0]
   sg_id = aws_security_group.ci.id
   ami_id = data.aws_ami.ubuntu.id
+  instance_name = "Jenkins"
+  instance_role = "ci"
 }
 
 module "deploy" {
@@ -34,4 +36,6 @@ module "deploy" {
   subnet_id = module.public_subnets.subnet_ids[1]
   sg_id = aws_security_group.deploy.id
   ami_id = data.aws_ami.ubuntu.id
+  instance_name = "Deploy"
+  instance_role = "appserver"
 }
