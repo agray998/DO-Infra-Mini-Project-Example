@@ -1,6 +1,4 @@
-module "VPC" {}
-
-module "PublicSubnet" {}
+module "PublicSubnets" {}
 
 module "CI" {}
 
