@@ -5,3 +5,7 @@ variable "cidr_prefix" {}
 variable "subnet_az" {}
 
 variable "rt_id" {}
+
+variable "zones" {
+  default = ["a", "b", "c"]
+}
