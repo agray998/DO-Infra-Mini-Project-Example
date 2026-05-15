@@ -23,6 +23,18 @@
     state: present
     update_cache: true
   notify: restart jenkins
+- name: ensure docker group exists
+  ansible.builtin.group:
+    name: docker
+    state: present
+- name: add jenkins to docker group
+  ansible.builtin.user:
+    name: jenkins
+    state: present
+    append: true
+    groups:
+    - docker
+  notify: restart jenkins
 - name: setup sudo
   ansible.builtin.copy:
     src: jenkins.conf
