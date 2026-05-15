@@ -1,1 +1,1 @@
-
+variable "cidr_prefix" {}
