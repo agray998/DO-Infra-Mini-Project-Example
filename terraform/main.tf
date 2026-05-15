@@ -17,7 +17,7 @@ data "aws_ami" "ubuntu" {
 module "public_subnets" {
   source = "modules/subnet"
   vpc_id = aws_vpc.project_vpc.id
-  cidr_prefix = "10.0"
+  cidr_prefix = var.cidr_prefix
   rt_id = aws_route_table.project_rt.id
   subnet_count = 2
 }
