@@ -11,7 +11,7 @@ resource "aws_db_instance" "project_db" {
   instance_class       = "db.t3.micro"
   db_subnet_group_name = "project_rds"
   vpc_security_group_ids = [aws_security_group.deploy.id]
-  username             = "foo"
+  username             = "admin"
   password             = var.rds_pass
   parameter_group_name = "default.mysql8.0"
   skip_final_snapshot  = true
