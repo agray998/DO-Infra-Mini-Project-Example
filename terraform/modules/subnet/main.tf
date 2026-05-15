@@ -1,5 +1,5 @@
 resource "aws_subnet" "project_sub" {
-  count                   = 2
+  count                   = var.subnet_count
   vpc_id                  = var.vpc_id
   cidr_block              = "${var.cidr_prefix}.${count.index}.0/24"
   availability_zone       = "eu-west-2${var.zones[count.index]}"
@@ -10,7 +10,7 @@ resource "aws_subnet" "project_sub" {
 }
 
 resource "aws_route_table_association" "project_rta" {
-  count          = 2
+  count          = var.subnet_count
   subnet_id      = aws_subnet.project_sub[count.index].id
   route_table_id = var.rt_id
 }
