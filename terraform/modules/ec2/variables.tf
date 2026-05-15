@@ -7,3 +7,5 @@ variable "sg_id" {}
 variable "instance_name" {}
 
 variable "instance_role" {}
+
+variable "key_pair" {}
