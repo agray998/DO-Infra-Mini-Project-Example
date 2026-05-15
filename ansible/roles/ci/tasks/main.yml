@@ -7,6 +7,9 @@
     - software-properties-common
     - openjdk-21-jre
     - fontconfig
+    - unzip
+    - wget
+    - curl
     state: present
     update_cache: true
 - name: add gpg key
