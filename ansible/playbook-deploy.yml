@@ -1,0 +1,6 @@
+- name: configure deploy
+  hosts: role_appserver
+  become: true
+  roles:
+  - roles/common
+  - roles/deploy
