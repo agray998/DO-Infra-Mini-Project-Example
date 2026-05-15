@@ -1,1 +1,14 @@
-
+#SPDX-License-Identifier: MIT-0
+---
+# tasks file for roles/deploy
+- name: setup nodesource
+  ansible.builtin.shell:
+    cmd: curl -fsSL https://deb.nodesource.com/setup_23.x | sudo bash
+- name: install node/npm
+  ansible.builtin.apt:
+    name: nodejs
+- name: clone source repo
+  ansible.builtin.git:
+    repo: https://gitlab.com/Reece-Elder/devops-m5-nodeproject
+    version: main
+    dest: /home/ubuntu/app
