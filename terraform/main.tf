@@ -29,6 +29,7 @@ module "ci" {
   ami_id = data.aws_ami.ubuntu.id
   instance_name = "Jenkins"
   instance_role = "ci"
+  key_pair = "demo-11-05-2026"
 }
 
 module "deploy" {
@@ -38,4 +39,5 @@ module "deploy" {
   ami_id = data.aws_ami.ubuntu.id
   instance_name = "Deploy"
   instance_role = "appserver"
+  key_pair = "demo-11-05-2026"
 }
