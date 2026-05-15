@@ -12,3 +12,15 @@
     repo: https://gitlab.com/Reece-Elder/devops-m5-nodeproject
     version: main
     dest: /home/ubuntu/app
+- name: install deps
+  ansible.builtin.shell:
+    cmd: npm i
+    chdir: /home/ubuntu/app
+- name: install forever
+  ansible.builtin.shell:
+    cmd: npm install forever -g
+    chdir: /home/ubuntu/app
+- name: run app
+  ansible.builtin.shell:
+    cmd: forever start index.js
+    chdir: /home/ubuntu/app
